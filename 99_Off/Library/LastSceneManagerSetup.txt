@@ -1,4 +1,0 @@
-sceneSetups:
-- path: Assets/Scenes/Main_Testing_Jeff.unity
-  isLoaded: 1
-  isActive: 1
