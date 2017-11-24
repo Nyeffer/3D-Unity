@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RPGCameraController : MonoBehaviour {
+public class CameraController : MonoBehaviour {
 
 	public Transform m_target;
 	public float m_heightOffset = 1.7f;
