@@ -5,6 +5,7 @@ using UnityEngine;
 public class PauseMenu : MonoBehaviour {
 
 	public GameObject gamePause;
+	public bool isPaused;
 
 	public void Pause () {
 		Time.timeScale = 0f;
