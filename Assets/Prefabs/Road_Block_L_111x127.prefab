@@ -10308,5 +10308,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platform:
   - {fileID: 1952222556534958, guid: cfb757ffd107e1a4eb1d76ae4bfe9233, type: 2}
+  - {fileID: 1146396043676024, guid: cf35ca55dbbdc754c8c3bdcf9e5ec63d, type: 2}
   spawnPoints:
   - {fileID: 4773684912272526}
