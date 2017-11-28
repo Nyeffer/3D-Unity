@@ -86,6 +86,9 @@ public class PlayerControls : MonoBehaviour {
 			if(Input.GetButton("Jump")) {
 				m_jumping = true;
 				m_moveDirection.y = m_jumpSpeed;
+				m_animationControl.SetBool("isGrounded", false);
+			} else {
+				m_animationControl.SetBool("isGrounded", true);
 			}
 
 			// tell the animator whats going on
