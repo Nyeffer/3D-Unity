@@ -79,6 +79,7 @@ public class PlayerControls : MonoBehaviour {
 			if(m_currentStamina < 0) {
 				m_currentStamina = 0;
 				m_isWalking = m_walkByDefault;
+				m_animationControl.SetBool("isRunning", false);
 			}
 		} else if(m_currentStamina < m_maxStamina) {
 			m_currentStamina += Time.deltaTime;
