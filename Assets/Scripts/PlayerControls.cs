@@ -11,7 +11,7 @@ public class PlayerControls : MonoBehaviour {
 	
 	// Movement Speeds
 	public float m_jumpSpeed = 8.0f;
-	public float m_runSpeed = 10.0f;
+	public float m_runSpeed = 20.0f;
 	public float m_walkSpeed = 4.0f;
 	public float m_turnSpeed = 250.0f;
 	public float m_moveBackwardsMultiplier = 0.75f;
@@ -61,17 +61,16 @@ public class PlayerControls : MonoBehaviour {
 		if(Input.GetAxis("Run") != 0 && Input.GetAxis("Horizontal") != 0) {
 			m_isWalking = !m_walkByDefault;
 			m_isSprinting = true;
-			m_currentStamina -= Time.deltaTime;
-
+			m_animationControl.SetBool("isRunning", true);
 			staminaBar.value = m_currentStamina/m_maxStamina;
 		} else if(Input.GetAxis("Run") != 0 && Input.GetAxis("Vertical") != 0) {
 			m_isWalking = !m_walkByDefault;
 			m_isSprinting = true;
-			m_currentStamina -= Time.deltaTime;
-
+			m_animationControl.SetBool("isRunning", true);
 			staminaBar.value = m_currentStamina/m_maxStamina;
 		} else {
 			m_isSprinting = false;
+			m_animationControl.SetBool("isRunning", false);
 			staminaBar.value = m_currentStamina/m_maxStamina;
 		}
 
