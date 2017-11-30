@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerControls : MonoBehaviour {
 
@@ -10,7 +11,7 @@ public class PlayerControls : MonoBehaviour {
 	
 	// Movement Speeds
 	public float m_jumpSpeed = 8.0f;
-	public float m_runSpeed = 10.0f;
+	public float m_runSpeed = 20.0f;
 	public float m_walkSpeed = 4.0f;
 	public float m_turnSpeed = 250.0f;
 	public float m_moveBackwardsMultiplier = 0.75f;
@@ -25,20 +26,71 @@ public class PlayerControls : MonoBehaviour {
 	private CharacterController m_controller;
 	private Animator m_animationControl;
 
+	// Stamina
+	public bool m_isSprinting;
+	public float m_currentStamina;
+	public float m_maxStamina;
+	public Slider staminaBar;
+
 	void Awake() {
 		// get the controllers
 		m_controller = GetComponent<CharacterController>();
 		m_animationControl = GetComponent<Animator>();
 	}
 
+	void Start() {
+		m_currentStamina = m_maxStamina;
+	}
+
 	void Update() {
 		m_moveStatus = "idle";
 		m_isWalking = m_walkByDefault;
 
-		// hold run to run
-		if(Input.GetAxis("Run") != 0) {
+		// hold Left Shift to run
+		/*if(Input.GetAxis("Run") != 0) {
 			m_isWalking = !m_walkByDefault;
+			m_isSprinting = true;
+			
+		}*/
+
+
+
+
+//--------------------------------------------------------------------------------//
+
+		if(Input.GetAxis("Run") != 0 && Input.GetAxis("Horizontal") != 0) {
+			m_isWalking = !m_walkByDefault;
+			m_isSprinting = true;
+			m_animationControl.SetBool("isRunning", true);
+			staminaBar.value = m_currentStamina/m_maxStamina;
+		} else if(Input.GetAxis("Run") != 0 && Input.GetAxis("Vertical") != 0) {
+			m_isWalking = !m_walkByDefault;
+			m_isSprinting = true;
+			m_animationControl.SetBool("isRunning", true);
+			staminaBar.value = m_currentStamina/m_maxStamina;
+		} else {
+			m_isSprinting = false;
+			m_animationControl.SetBool("isRunning", false);
+			staminaBar.value = m_currentStamina/m_maxStamina;
 		}
+
+		if(m_isSprinting) {
+			m_currentStamina -= Time.deltaTime;
+			if(m_currentStamina < 0) {
+				m_currentStamina = 0;
+				m_isWalking = m_walkByDefault;
+				m_animationControl.SetBool("isRunning", false);
+			}
+		} else if(m_currentStamina < m_maxStamina) {
+			m_currentStamina += Time.deltaTime;
+		}
+
+		
+//--------------------------------------------------------------------------------//
+		
+
+
+
 
 		if(m_grounded) {
 			// if the player is steering with the right mouse button ... A/D strafe

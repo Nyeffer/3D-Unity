@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
-	public float m_startTime = 99f;
+	public float m_startTime;
 	public Text m_countDown;
 	public Image m_gameOver;
 
@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-
+		
 	}
 	
 	// Update is called once per frame
