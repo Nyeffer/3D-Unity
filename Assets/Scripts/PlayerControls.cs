@@ -46,16 +46,6 @@ public class PlayerControls : MonoBehaviour {
 		m_moveStatus = "idle";
 		m_isWalking = m_walkByDefault;
 
-		// hold Left Shift to run
-		/*if(Input.GetAxis("Run") != 0) {
-			m_isWalking = !m_walkByDefault;
-			m_isSprinting = true;
-			
-		}*/
-
-
-
-
 //--------------------------------------------------------------------------------//
 
 		if(Input.GetAxis("Run") != 0 && Input.GetAxis("Horizontal") != 0) {
@@ -83,6 +73,11 @@ public class PlayerControls : MonoBehaviour {
 			}
 		} else if(m_currentStamina < m_maxStamina) {
 			m_currentStamina += Time.deltaTime;
+		}
+
+
+		if(Input.GetKeyDown("d")) {
+			
 		}
 
 		
