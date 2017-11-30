@@ -13,7 +13,7 @@ public class CarController : MonoBehaviour {
 
 	void Update() {
 		Vector3 pos = gameObject.transform.position;
-		pos.z = pos.z + m_moveSpeed * Time.deltaTime;
+		pos.x = pos.x - m_moveSpeed * Time.deltaTime;
 		gameObject.transform.position = pos;
 	}
 }
