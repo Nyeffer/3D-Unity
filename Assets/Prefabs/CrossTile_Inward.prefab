@@ -36,6 +36,7 @@ GameObject:
   - component: {fileID: 4881704369807554}
   - component: {fileID: 33991717373023890}
   - component: {fileID: 23386316485261300}
+  - component: {fileID: 64326140199453474}
   m_Layer: 0
   m_Name: default
   m_TagString: Untagged
@@ -66,6 +67,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4270590970374658}
+  - component: {fileID: 64863531159848710}
   m_Layer: 0
   m_Name: Tile_2
   m_TagString: Untagged
@@ -366,3 +368,31 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: ba686e73bbb03d04e8fb9fc335a9e5ab, type: 3}
+--- !u!64 &64326140199453474
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1237361694306822}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: 09a1e70ee727101478cad2367d542d60, type: 3}
+--- !u!64 &64863531159848710
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1400159073730092}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 0}
