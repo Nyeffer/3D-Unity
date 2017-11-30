@@ -47,11 +47,11 @@ public class PlayerControls : MonoBehaviour {
 		m_isWalking = m_walkByDefault;
 
 		// hold Left Shift to run
-		if(Input.GetAxis("Run") != 0) {
+		/*if(Input.GetAxis("Run") != 0) {
 			m_isWalking = !m_walkByDefault;
 			m_isSprinting = true;
 			
-		}
+		}*/
 
 
 
