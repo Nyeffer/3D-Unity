@@ -523,6 +523,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4904844305372748}
+  - component: {fileID: 114797254896466216}
   m_Layer: 0
   m_Name: Barricade (1)
   m_TagString: Untagged
@@ -845,6 +846,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4797603130626570}
   - component: {fileID: 65038416704771106}
+  - component: {fileID: 114724380634376012}
   m_Layer: 0
   m_Name: Barricades
   m_TagString: Untagged
@@ -2987,7 +2989,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1661408556784704}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -31.9, y: 8.08, z: 102.3}
+  m_LocalPosition: {x: -31.9, y: 8.08, z: 92.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4277351087858660}
@@ -4431,7 +4433,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1204495201703254}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -47.6, y: 8.08, z: 102.3}
+  m_LocalPosition: {x: -47.6, y: 8.08, z: 92.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4916350245043596}
@@ -8214,3 +8216,26 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 63.103462, y: 22.080902, z: 10.26767}
   m_Center: {x: -39.982517, y: 10.540451, z: 108.2021}
+--- !u!114 &114724380634376012
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1330439299225426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b740a86a2b9a4e245b5cc536f07ba032, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114797254896466216
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1204495201703254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82213a23f61a1674daf2266d4dd9b9f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  car: {fileID: 1030746088512606, guid: 924424786cfafc146a4ed9f14b2e1569, type: 2}
