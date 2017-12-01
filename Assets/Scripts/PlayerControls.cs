@@ -11,8 +11,8 @@ public class PlayerControls : MonoBehaviour {
 	
 	// Movement Speeds
 	public float m_jumpSpeed = 8.0f;
-	public float m_runSpeed = 20.0f;
-	public float m_walkSpeed = 4.0f;
+	public float m_sprintSpeed = 20.0f;
+	public float m_runSpeed = 7.0f;
 	public float m_turnSpeed = 250.0f;
 	public float m_moveBackwardsMultiplier = 0.75f;
 
@@ -20,7 +20,7 @@ public class PlayerControls : MonoBehaviour {
 	private float m_speedMultiplier = 0.0f;
 	private bool m_grounded = false;
 	private Vector3 m_moveDirection = Vector3.zero;
-	private bool m_isWalking = false;
+	private bool m_isRunning = false;
 	private bool m_jumping = false;
 	private bool m_mouseSideDown = false;
 	private CharacterController m_controller;
@@ -44,23 +44,23 @@ public class PlayerControls : MonoBehaviour {
 
 	void Update() {
 		m_moveStatus = "idle";
-		m_isWalking = m_walkByDefault;
+		m_isRunning = m_walkByDefault;
 
 //--------------------------------------------------------------------------------//
 
 		if(Input.GetAxis("Run") != 0 && Input.GetAxis("Horizontal") != 0) {
-			m_isWalking = !m_walkByDefault;
+			m_isRunning = !m_walkByDefault;
 			m_isSprinting = true;
-			m_animationControl.SetBool("isRunning", true);
+			m_animationControl.SetBool("isSprinting", true);
 			staminaBar.value = m_currentStamina/m_maxStamina;
 		} else if(Input.GetAxis("Run") != 0 && Input.GetAxis("Vertical") != 0) {
-			m_isWalking = !m_walkByDefault;
+			m_isRunning = !m_walkByDefault;
 			m_isSprinting = true;
-			m_animationControl.SetBool("isRunning", true);
+			m_animationControl.SetBool("isSprinting", true);
 			staminaBar.value = m_currentStamina/m_maxStamina;
 		} else {
 			m_isSprinting = false;
-			m_animationControl.SetBool("isRunning", false);
+			m_animationControl.SetBool("isSprinting", false);
 			staminaBar.value = m_currentStamina/m_maxStamina;
 		}
 
@@ -68,16 +68,11 @@ public class PlayerControls : MonoBehaviour {
 			m_currentStamina -= Time.deltaTime;
 			if(m_currentStamina < 0) {
 				m_currentStamina = 0;
-				m_isWalking = m_walkByDefault;
-				m_animationControl.SetBool("isRunning", false);
+				m_isRunning = m_walkByDefault;
+				m_animationControl.SetBool("isSprinting", false);
 			}
 		} else if(m_currentStamina < m_maxStamina) {
 			m_currentStamina += Time.deltaTime;
-		}
-
-
-		if(Input.GetKeyDown("d")) {
-			
 		}
 
 		
@@ -127,7 +122,7 @@ public class PlayerControls : MonoBehaviour {
 			}
 
 			// use the run or the walkspeed
-			m_moveDirection *= m_isWalking ? m_walkSpeed * m_speedMultiplier : m_runSpeed * m_speedMultiplier;
+			m_moveDirection *= m_isRunning ? m_runSpeed * m_speedMultiplier : m_sprintSpeed * m_speedMultiplier;
 
 			// Jump
 			if(Input.GetButtonDown("Jump")) {
@@ -140,9 +135,9 @@ public class PlayerControls : MonoBehaviour {
 
 			// tell the animator whats going on
 			if(m_moveDirection.magnitude > 0.05f) { // TODO: Fuck you magic numbers
-				m_animationControl.SetBool("isWalking", true);
+				m_animationControl.SetBool("isRunning", true);
 			} else {
-				m_animationControl.SetBool("isWalking", false);
+				m_animationControl.SetBool("isRunning", false);
 			}
 
 			m_animationControl.SetFloat("Speed", m_moveDirection.z);
@@ -171,4 +166,18 @@ public class PlayerControls : MonoBehaviour {
 			m_moveStatus = "jump";
 		}
 	}
+
+	void OnTriggerEnter(Collider other) {
+		if(other.gameObject.tag == "Obstacle") {
+			m_animationControl.SetTrigger("isStumbled");
+		}
+	}
+	
+	void OnCollisionEnter(Collision other) {
+		if(other.gameObject.tag == "Wall") {
+			Debug.Log("BANG!");
+			m_animationControl.SetBool("isHits", true);
+			Debug.Log("BANG!");
+		}
+	}	
 }

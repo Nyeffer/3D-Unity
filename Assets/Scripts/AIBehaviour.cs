@@ -14,7 +14,7 @@ public class AIBehaviour : MonoBehaviour {
 		
 	}
 
-	void OnTriggerEnter (Collision other) {
-		
+	void OnTriggerEnter (Collider other) {
+
 	}
 }
