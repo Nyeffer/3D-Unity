@@ -112,12 +112,12 @@ public class PlayerControls : MonoBehaviour {
 				m_moveDirection.x -= Input.GetAxis("Strafing");
 			}
 
-			if(((Input.GetMouseButtonDown(1) && Input.GetAxis("Horizontal") !=0) /*|| Input.GetAxis("Strafing") != 0)*/ && Input.GetAxis("Vertical") != 0)) {
+			if(((Input.GetMouseButtonDown(1) && Input.GetAxis("Horizontal") !=0) && Input.GetAxis("Vertical") != 0)) {
 				m_moveDirection *= 0.707f; // TODO: Fuck you magic numbers
 			}
 
 			// apply the move backwards multiplier if not moving forwards only
-			if((Input.GetMouseButton(1) && Input.GetAxis("Horizontal") != 0) /*|| Input.GetAxis("Strafing") != 0*/ || Input.GetAxis("Vertical") < 0) {
+			if((Input.GetMouseButton(1) && Input.GetAxis("Horizontal") != 0) || Input.GetAxis("Vertical") < 0) {
 				m_speedMultiplier = m_moveBackwardsMultiplier;
 			} else {
 				m_speedMultiplier = 1f;
@@ -168,13 +168,6 @@ public class PlayerControls : MonoBehaviour {
 			m_moveStatus = "jump";
 		}
 	}
-
-	/*void OnTriggerEnter(Collider other) {
-		if(other.gameObject.tag == "Obstacle") {
-			m_animationControl.SetTrigger("isStumbled");
-		}
-	}*/
-	
 	void OnCollisionEnter(Collision other) {
 		if(other.gameObject.tag == "Car") {
 			Debug.Log("BANG!");
