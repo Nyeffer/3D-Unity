@@ -703,6 +703,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4098988284147694}
+  - component: {fileID: 114644575490675284}
   m_Layer: 0
   m_Name: Barricade
   m_TagString: Untagged
@@ -944,6 +945,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4391125780208014}
   - component: {fileID: 65325571496997584}
+  - component: {fileID: 114012660808989368}
   m_Layer: 0
   m_Name: Barricades
   m_TagString: Untagged
@@ -2711,7 +2713,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1285113660762126}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -31.9, y: 8.08, z: 102.3}
+  m_LocalPosition: {x: -31.9, y: 8.08, z: 90.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4135420843185738}
@@ -2766,7 +2768,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1904675335668422}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -47.6, y: 8.08, z: 102.3}
+  m_LocalPosition: {x: -47.6, y: 8.08, z: 90.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4544004682773164}
@@ -8212,5 +8214,28 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 63.103462, y: 22.080902, z: 10.26767}
-  m_Center: {x: -39.982517, y: 10.540451, z: 108.2021}
+  m_Size: {x: 63.103462, y: 22.080902, z: 7.679291}
+  m_Center: {x: -39.982517, y: 10.540451, z: 109.49629}
+--- !u!114 &114012660808989368
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1362483647423772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b740a86a2b9a4e245b5cc536f07ba032, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114644575490675284
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1285113660762126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82213a23f61a1674daf2266d4dd9b9f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  car: {fileID: 1918797486897218, guid: 4f98596aeba188c418c4582ce5d09bb4, type: 2}
