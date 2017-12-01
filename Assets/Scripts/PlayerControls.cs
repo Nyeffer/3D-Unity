@@ -24,6 +24,7 @@ public class PlayerControls : MonoBehaviour {
 	private bool m_jumping = false;
 	private bool m_mouseSideDown = false;
 	private CharacterController m_controller;
+	//private PlayerControls playerControls;
 	private Animator m_animationControl;
 
 	// Stamina
@@ -36,6 +37,7 @@ public class PlayerControls : MonoBehaviour {
 		// get the controllers
 		m_controller = GetComponent<CharacterController>();
 		m_animationControl = GetComponent<Animator>();
+		//PlayerControls playerControls = GetComponent(typeof(PlayerControls)) as PlayerControls;
 	}
 
 	void Start() {
@@ -167,17 +169,23 @@ public class PlayerControls : MonoBehaviour {
 		}
 	}
 
-	void OnTriggerEnter(Collider other) {
+	/*void OnTriggerEnter(Collider other) {
 		if(other.gameObject.tag == "Obstacle") {
 			m_animationControl.SetTrigger("isStumbled");
 		}
-	}
+	}*/
 	
 	void OnCollisionEnter(Collision other) {
-		if(other.gameObject.tag == "Wall") {
+		if(other.gameObject.tag == "Car") {
 			Debug.Log("BANG!");
-			m_animationControl.SetBool("isHits", true);
+			m_animationControl.SetBool("isHit", true);
 			Debug.Log("BANG!");
+			//playerControls.enabled = false;
 		}
+
+		if(other.gameObject.tag == "Obstacle") {
+			m_animationControl.SetTrigger("isStumbled");
+		}
+		
 	}	
 }
