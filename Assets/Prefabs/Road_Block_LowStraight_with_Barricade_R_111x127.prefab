@@ -526,9 +526,10 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4675182285664136}
+  - component: {fileID: 114656348499028958}
   m_Layer: 0
   m_Name: Barricade (1)
-  m_TagString: Untagged
+  m_TagString: Car
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1075,6 +1076,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4948016378611796}
   - component: {fileID: 65164114883429624}
+  - component: {fileID: 114056233508966260}
   m_Layer: 0
   m_Name: Barricades
   m_TagString: Untagged
@@ -7089,5 +7091,28 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 12.141899, y: 24.716965, z: 65.561874}
-  m_Center: {x: -85.646194, y: 10.260429, z: 11.975136}
+  m_Size: {x: 4.563431, y: 24.716965, z: 65.561874}
+  m_Center: {x: -89.43543, y: 10.260429, z: 11.975136}
+--- !u!114 &114056233508966260
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1519844652346936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b740a86a2b9a4e245b5cc536f07ba032, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114656348499028958
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1233460858170184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82213a23f61a1674daf2266d4dd9b9f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  car: {fileID: 1708642562284118, guid: d3d6b5d1c5161964aa018343db4e36b7, type: 2}

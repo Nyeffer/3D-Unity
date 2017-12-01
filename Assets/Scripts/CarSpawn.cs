@@ -9,7 +9,7 @@ public class CarSpawn : MonoBehaviour {
 	float counter = 0;
 	void Update() {
 		if(counter >= 3) {
-			Instantiate(car, gameObject.transform.position, gameObject.transform.rotation);
+			Instantiate(car, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 10, gameObject.transform.position.z), gameObject.transform.rotation);
 			counter = 0;
 		} else {
 			counter += Time.deltaTime;

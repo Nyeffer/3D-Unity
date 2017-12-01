@@ -1150,6 +1150,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4604637048150048}
   - component: {fileID: 65172798382520816}
+  - component: {fileID: 114713042775683016}
   m_Layer: 0
   m_Name: Barricades
   m_TagString: Untagged
@@ -1264,7 +1265,7 @@ GameObject:
   - component: {fileID: 114938027848592086}
   m_Layer: 0
   m_Name: Barricade
-  m_TagString: Untagged
+  m_TagString: Car
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2516,14 +2517,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1583725164765636}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 14.7, y: 8.06, z: 4.17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4316604396266684}
   m_Father: {fileID: 4604637048150048}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!4 &4124383519741438
 Transform:
   m_ObjectHideFlags: 1
@@ -3022,13 +3023,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1780465377596916}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4113417061551026}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4323974691983486
 Transform:
   m_ObjectHideFlags: 1
@@ -7300,8 +7301,19 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10.78717, y: 24.716965, z: 65.561874}
-  m_Center: {x: 21.287193, y: 10.260429, z: 11.975136}
+  m_Size: {x: 5.5442142, y: 24.716965, z: 65.561874}
+  m_Center: {x: 23.908672, y: 10.260429, z: 11.975136}
+--- !u!114 &114713042775683016
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1557154756128304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b740a86a2b9a4e245b5cc536f07ba032, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114938027848592086
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7313,4 +7325,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82213a23f61a1674daf2266d4dd9b9f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  car: {fileID: 1972904577887860, guid: 38a978de8dfcd9a4b9c67ffaf1adca03, type: 2}
+  car: {fileID: 1297596371937218, guid: 579247da8a4aa7e4896adbf7c800206a, type: 2}
