@@ -164,6 +164,13 @@ public class PlayerControls : MonoBehaviour {
 			m_moveStatus = "jump";
 		}
 	}
+
+	void OnTriggerEnter(Collider other) {
+		if(other.gameObject.tag == "Goal") {
+			m_gm.WinOver();
+		}
+	}
+
 	void OnCollisionEnter(Collision other) {
 		if(other.gameObject.tag == "Car") {
 			m_animationControl.SetBool("isHit", true);
