@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour {
 	public float m_startTime;
 	public Text m_countDown;
 	public Image m_gameOver;
-	public GameObject m_pc;
+	public Image m_winOver;
 	
 	
 	// Use this for initialization
@@ -31,5 +31,10 @@ public class GameManager : MonoBehaviour {
 	public void GameOver () {
 		Time.timeScale = 0f;
 		m_gameOver.gameObject.SetActive(true);
+	}
+
+	public void WinOver () {
+		Time.timeScale = 0f;
+		m_winOver.gameObject.SetActive(true);
 	}
 }
