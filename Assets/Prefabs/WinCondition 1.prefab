@@ -1245,7 +1245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91abe520e442138428264f48fb5b7af7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Spawner: {fileID: 0}
+  Spawner: {fileID: 1505888008914334, guid: e4620f028fd778a45a82390082c6e44b, type: 2}
   goals:
   - {fileID: 1885101036647604}
   - {fileID: 1357441831727648}
