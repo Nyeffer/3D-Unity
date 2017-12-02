@@ -10,11 +10,12 @@ public class PlayerControls : MonoBehaviour {
 	public float m_gravity = 20.0f;
 	
 	// Movement Speeds
-	public float m_jumpSpeed = 8.0f;
-	public float m_sprintSpeed = 20.0f;
-	public float m_runSpeed = 7.0f;
-	public float m_turnSpeed = 250.0f;
-	public float m_moveBackwardsMultiplier = 0.75f;
+	public float m_jumpSpeed;
+	public float m_sprintSpeed;
+	public float m_runSpeed;
+	public float m_turnSpeed;
+	public float m_moveBackwardsMultiplier;
+	public GameManager m_gm;
 
 	// Internal Variables
 	private float m_speedMultiplier = 0.0f;
@@ -24,8 +25,8 @@ public class PlayerControls : MonoBehaviour {
 	private bool m_jumping = false;
 	private bool m_mouseSideDown = false;
 	private CharacterController m_controller;
-	//private PlayerControls playerControls;
 	private Animator m_animationControl;
+	
 
 	// Stamina
 	public bool m_isSprinting;
@@ -37,7 +38,7 @@ public class PlayerControls : MonoBehaviour {
 		// get the controllers
 		m_controller = GetComponent<CharacterController>();
 		m_animationControl = GetComponent<Animator>();
-		//PlayerControls playerControls = GetComponent(typeof(PlayerControls)) as PlayerControls;
+		
 	}
 
 	void Start() {
@@ -107,11 +108,6 @@ public class PlayerControls : MonoBehaviour {
 				m_moveDirection.z = 1;
 			}
 
-			// if not strafing with right and horizontal, check for strafe keys
-			if(!(Input.GetMouseButton(1) && Input.GetAxis("Horizontal") != 0)) {
-				m_moveDirection.x -= Input.GetAxis("Strafing");
-			}
-
 			if(((Input.GetMouseButtonDown(1) && Input.GetAxis("Horizontal") !=0) && Input.GetAxis("Vertical") != 0)) {
 				m_moveDirection *= 0.707f; // TODO: Fuck you magic numbers
 			}
@@ -170,15 +166,51 @@ public class PlayerControls : MonoBehaviour {
 	}
 	void OnCollisionEnter(Collision other) {
 		if(other.gameObject.tag == "Car") {
-			Debug.Log("BANG!");
 			m_animationControl.SetBool("isHit", true);
+			m_jumpSpeed = 0;
+			m_sprintSpeed = 0;
+			m_runSpeed = 0;
+			m_turnSpeed = 0;
+			m_moveBackwardsMultiplier = 0;
 			Debug.Log("BANG!");
-			//playerControls.enabled = false;
+			StartCoroutine(GameOverDelay());
+			
 		}
 
 		if(other.gameObject.tag == "Obstacle") {
 			m_animationControl.SetTrigger("isStumbled");
+			
+		/*	m_jumpSpeed = 4.0f;
+			m_sprintSpeed = 10.0f;
+			m_runSpeed = 7.5f;
+			m_turnSpeed = 125.0f;
+			m_moveBackwardsMultiplier = 0.375f;*/
+			StartCoroutine(SlowDown());
+		} else {
+		/*	m_jumpSpeed = 8.0f;
+			m_sprintSpeed = 20.0f;
+			m_runSpeed = 15.0f;
+			m_turnSpeed = 250.0f;
+			m_moveBackwardsMultiplier = 0.75f;*/
 		}
-		
+	}
+
+	IEnumerator GameOverDelay() {
+		yield return new WaitForSeconds(3);
+		m_gm.GameOver();
+	}
+
+	IEnumerator SlowDown() {
+		m_jumpSpeed = 4.0f;
+		m_sprintSpeed = 10.0f;
+		m_runSpeed = 7.5f;
+		m_turnSpeed = 125.0f;
+		m_moveBackwardsMultiplier = 0.375f;
+		yield return new WaitForSeconds(1);
+		m_jumpSpeed = 8.0f;
+		m_sprintSpeed = 20.0f;
+		m_runSpeed = 15.0f;
+		m_turnSpeed = 250.0f;
+		m_moveBackwardsMultiplier = 0.75f;
 	}	
 }
