@@ -296,6 +296,14 @@ Prefab:
       propertyPath: Spawner
       value: 
       objectReference: {fileID: 1136534980}
+    - target: {fileID: 4616021149771072, guid: dd6896a81067fac468aa4afc7107c9a5, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 6.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 4616021149771072, guid: dd6896a81067fac468aa4afc7107c9a5, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -16.35
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dd6896a81067fac468aa4afc7107c9a5, type: 2}
   m_IsPrefabParent: 0
