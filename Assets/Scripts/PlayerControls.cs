@@ -16,6 +16,7 @@ public class PlayerControls : MonoBehaviour {
 	public float m_turnSpeed;
 	public float m_moveBackwardsMultiplier;
 	public GameManager m_gm;
+	public AudioSource runSound;
 
 	// Internal Variables
 	private float m_speedMultiplier = 0.0f;
