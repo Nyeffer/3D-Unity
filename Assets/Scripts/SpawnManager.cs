@@ -43,6 +43,9 @@ public class SpawnManager : MonoBehaviour
             case 4:
                 Instantiate(platform[3], spawnPoints[i].position, Quaternion.identity);
                 break;
+            case 5:
+                Instantiate(platform[4], spawnPoints[i].position, Quaternion.identity);
+                break;
         }
     }
 }
