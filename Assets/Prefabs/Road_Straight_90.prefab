@@ -594,6 +594,7 @@ GameObject:
   - component: {fileID: 4115254182252718}
   - component: {fileID: 33951771667540414}
   - component: {fileID: 23941862586467620}
+  - component: {fileID: 64684467166958908}
   m_Layer: 0
   m_Name: default
   m_TagString: Untagged
@@ -2478,6 +2479,20 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 91e172e2077fc8d4496b9c2d4c67a4dc, type: 3}
+--- !u!64 &64684467166958908
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1781222586316104}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: c2423702c8135884c8e7196a3c631ce7, type: 3}
 --- !u!64 &64778271231461192
 MeshCollider:
   m_ObjectHideFlags: 1
