@@ -16,6 +16,7 @@ public class PlayerControls : MonoBehaviour {
 	public float m_turnSpeed;
 	public float m_moveBackwardsMultiplier;
 	public GameManager m_gm;
+	public AudioSource runSound;
 
 	// Internal Variables
 	private float m_speedMultiplier = 0.0f;
@@ -186,20 +187,8 @@ public class PlayerControls : MonoBehaviour {
 
 		if(other.gameObject.tag == "Obstacle") {
 			m_animationControl.SetTrigger("isStumbled");
-			
-		/*	m_jumpSpeed = 4.0f;
-			m_sprintSpeed = 10.0f;
-			m_runSpeed = 7.5f;
-			m_turnSpeed = 125.0f;
-			m_moveBackwardsMultiplier = 0.375f;*/
 			StartCoroutine(SlowDown());
-		} else {
-		/*	m_jumpSpeed = 8.0f;
-			m_sprintSpeed = 20.0f;
-			m_runSpeed = 15.0f;
-			m_turnSpeed = 250.0f;
-			m_moveBackwardsMultiplier = 0.75f;*/
-		}
+		} 
 	}
 
 	IEnumerator GameOverDelay() {
