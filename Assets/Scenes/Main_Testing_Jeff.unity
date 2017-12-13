@@ -273,6 +273,48 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &555189399
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4763154161884116, guid: e375a0d48f87a1a46be44f4532bfa1b5, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 9.100281
+      objectReference: {fileID: 0}
+    - target: {fileID: 4763154161884116, guid: e375a0d48f87a1a46be44f4532bfa1b5, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 114.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4763154161884116, guid: e375a0d48f87a1a46be44f4532bfa1b5, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 4.60393
+      objectReference: {fileID: 0}
+    - target: {fileID: 4763154161884116, guid: e375a0d48f87a1a46be44f4532bfa1b5, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4763154161884116, guid: e375a0d48f87a1a46be44f4532bfa1b5, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4763154161884116, guid: e375a0d48f87a1a46be44f4532bfa1b5, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4763154161884116, guid: e375a0d48f87a1a46be44f4532bfa1b5, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4763154161884116, guid: e375a0d48f87a1a46be44f4532bfa1b5, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: e375a0d48f87a1a46be44f4532bfa1b5, type: 2}
+  m_IsPrefabParent: 0
 --- !u!4 &667701283
 Transform:
   m_ObjectHideFlags: 0
@@ -392,6 +434,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platform:
   - {fileID: 1503561106327870, guid: 1166af4b65434d446b5b759891ef5117, type: 2}
+  - {fileID: 1398436193684882, guid: d0e495b5726489f40b1b1b1567d5a53b, type: 2}
+  - {fileID: 1836554529809416, guid: 637629127bc246c4296bdf694c8381a8, type: 2}
   spawnPoints:
   - {fileID: 105327751}
   - {fileID: 1284372807}
@@ -575,8 +619,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 2053738221}
+  - component: {fileID: 2053738222}
   m_Layer: 0
-  m_Name: SpawnPoint_-80x-80
+  m_Name: LandMark_-80x-80
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -596,3 +641,18 @@ Transform:
   m_Father: {fileID: 1136534982}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2053738222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2053738220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faea4df9c775ee14793dfffd08d8e06b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  platform:
+  - {fileID: 0}
+  spawnPoints:
+  - {fileID: 2053738221}
