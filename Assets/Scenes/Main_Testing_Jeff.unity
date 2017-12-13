@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: bc237606f1e8e6441840a90578b24e18, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.7302194, g: 0.7889753, b: 0.8498578, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -151,6 +151,7 @@ GameObject:
   - component: {fileID: 464902593}
   - component: {fileID: 464902592}
   - component: {fileID: 464902591}
+  - component: {fileID: 464902596}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -227,6 +228,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &464902596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 464902590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01b1ee92831bae5459b19c06f3f44d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_target: {fileID: 1850399028}
+  m_heightOffset: 1.7
+  m_distance: 12
+  m_offSetFromWall: 0.1
+  m_minDistance: 0.6
+  m_maxDistance: 20
+  m_xSpeed: 200
+  m_ySpeed: 200
+  m_yMinLimit: -80
+  m_yMaxLimit: 80
+  m_zoomSpeed: 5
+  m_autoRotationSpeed: 3
+  m_collisionLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_alwaysRotateToRearTarget: 0
+  m_allowMouseInputX: 1
+  m_allowMouseInputY: 1
 --- !u!1 &474446610 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1368081911459146, guid: 64fb042d87579414caf83413096ee0ef,
@@ -710,8 +740,13 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1113076308916572, guid: b94063daf6d2f11448a9c677a6c7b3e6, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b94063daf6d2f11448a9c677a6c7b3e6, type: 2}
   m_IsPrefabParent: 0
+--- !u!4 &1850399028 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4763154161884116, guid: e375a0d48f87a1a46be44f4532bfa1b5,
+    type: 2}
+  m_PrefabInternal: {fileID: 555189399}
