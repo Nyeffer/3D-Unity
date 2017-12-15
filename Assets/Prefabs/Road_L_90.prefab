@@ -1428,22 +1428,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1992066259465122
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4728733949291328}
-  - component: {fileID: 65289618644644298}
-  m_Layer: 0
-  m_Name: Left
-  m_TagString: return
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1996065952508950
 GameObject:
   m_ObjectHideFlags: 1
@@ -2082,7 +2066,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4728733949291328}
   - {fileID: 4465355242230520}
   m_Father: {fileID: 4952550842348590}
   m_RootOrder: 0
@@ -2152,7 +2135,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4420071037243042}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4474637662324724
 Transform:
@@ -2424,19 +2407,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4608657514520720}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4728733949291328
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1992066259465122}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.3, y: 0, z: 10.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4420071037243042}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4733628642935252
@@ -4479,18 +4449,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 6.97947, y: 0.97635365, z: 13.943002}
   m_Center: {x: -1.3253374, y: -6.7234883, z: 0.22094989}
---- !u!65 &65289618644644298
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1992066259465122}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 12.064489, y: 13.398804, z: 1.0571718}
-  m_Center: {x: -3.5933447, y: 46.003716, z: -9.753317}
 --- !u!65 &65293588599907360
 BoxCollider:
   m_ObjectHideFlags: 1
