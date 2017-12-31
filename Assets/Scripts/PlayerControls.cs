@@ -33,6 +33,11 @@ public class PlayerControls : MonoBehaviour {
 	public bool m_isSprinting;
 	public float m_currentStamina;
 	public float m_maxStamina;
+
+	public float counter;
+
+	public bool isWin;
+	public bool isLost;
 	public Slider staminaBar;
 
 	void Awake() {
@@ -44,13 +49,34 @@ public class PlayerControls : MonoBehaviour {
 
 	void Start() {
 		m_currentStamina = m_maxStamina;
+		isWin = false;
+		isLost = false;
+		counter = 0;
 	}
 
 	void Update() {
 		m_moveStatus = "idle";
 		m_isRunning = m_walkByDefault;
 
+		if(isWin) {
+			if(counter <= 100) {
+				counter += 1;
+			} else {
+				Application.LoadLevel("Menu");
+			}
+		}
+
+		if(isLost) {
+			if(counter <= 100) {
+				counter += 1;
+			} else {
+				Application.LoadLevel("Main");
+			}
+		}
+
 //--------------------------------------------------------------------------------//
+
+
 
 		if(Input.GetAxis("Run") != 0 && Input.GetAxis("Horizontal") != 0) {
 			m_isRunning = !m_walkByDefault;
@@ -169,6 +195,7 @@ public class PlayerControls : MonoBehaviour {
 	void OnTriggerEnter(Collider other) {
 		if(other.gameObject.tag == "Goal") {
 			m_gm.WinOver();
+			isWin = true;
 		}
 	}
 
@@ -194,6 +221,7 @@ public class PlayerControls : MonoBehaviour {
 	IEnumerator GameOverDelay() {
 		yield return new WaitForSeconds(3);
 		m_gm.GameOver();
+		isLost = true;
 	}
 
 	IEnumerator SlowDown() {

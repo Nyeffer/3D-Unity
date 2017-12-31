@@ -9,11 +9,12 @@ public class GameManager : MonoBehaviour {
 	public Text m_countDown;
 	public Image m_gameOver;
 	public Image m_winOver;
+	public float counter;
 	
 	
 	// Use this for initialization
 	void Start () {
-		
+		counter = 0;
 	}
 	
 	// Update is called once per frame
@@ -30,11 +31,13 @@ public class GameManager : MonoBehaviour {
 
 	public void GameOver () {
 		Time.timeScale = 0f;
-		m_gameOver.gameObject.SetActive(true);
+		m_gameOver.gameObject.SetActive(true);		
+		Application.Quit();
 	}
 
 	public void WinOver () {
 		Time.timeScale = 0f;
 		m_winOver.gameObject.SetActive(true);
+		Application.Quit();
 	}
 }
